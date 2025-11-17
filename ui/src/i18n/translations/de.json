@@ -1,0 +1,234 @@
+{
+  "weekDays": {
+    "mon": "Mo",
+    "tue": "Di",
+    "wed": "Mi",
+    "thu": "Do",
+    "fri": "Fr",
+    "sat": "Sa",
+    "sun": "So"
+  },
+  "createService": {
+    "title": "Neuer Service",
+    "name": "Name:",
+    "host": "Host (Domain):",
+    "stack": "Stack (optional):",
+    "selectStack": "Stack auswählen…",
+    "containers": "Container:",
+    "containerHelp": "Wählen Sie einen oder mehrere Container aus der Liste aus.",
+    "targetUrl": "Ziel-URL:",
+    "idleTimeout": "Leerlauf-Timeout:",
+    "startupTimeout": "Start-Timeout:",
+    "mode": "Modus:",
+    "modeOnDemand": "Bei Bedarf",
+    "modeScheduleOnly": "Nur Zeitplan",
+    "modeBoth": "Bei Bedarf + Zeitplan",
+    "weekdays": "Wochentage:",
+    "weekdaysHelp": "Alle Tage sind standardmäßig aktiv. Sie können einzelne Tage deaktivieren, aber mindestens ein Tag muss ausgewählt bleiben.",
+    "timeWindow": "Zeitfenster:",
+    "timeWindowHelp": "Sie können nur die Startzeit, nur die Endzeit oder beide Werte angeben. Leere Felder bedeuten keine Zeitbeschränkungen an den ausgewählten Tagen.",
+    "advancedSettings": "Erweiterte Einstellungen ▼",
+    "hideAdvancedSettings": "Erweiterte Einstellungen ausblenden ▲",
+    "healthCheckPath": "Health-Check-Pfad:",
+    "cancel": "Abbrechen",
+    "create": "Erstellen",
+    "proxyNotification": {
+      "title": "Proxy-Konfiguration erforderlich",
+      "message": "Da Sie sowohl Host als auch Ziel-URL angegeben haben, müssen Sie Ihren externen Proxy (nginx, Apache usw.) so konfigurieren, dass Anfragen an Conslee weitergeleitet werden. Weitere Informationen finden Sie im Hilfebereich.",
+      "viewHelp": "Hilfebereich anzeigen",
+      "close": "Schließen"
+    },
+    "errors": {
+      "nameRequired": "Bitte geben Sie den Servicenamen an",
+      "hostRequired": "Bitte geben Sie die Domain (Host) an",
+      "hostInvalid": "Die Domain muss ohne Protokoll angegeben werden, z.B.: app.example.com",
+      "targetRequired": "Bitte geben Sie die Ziel-URL an",
+      "targetInvalid": "Die Ziel-URL muss eine gültige http- oder https-Adresse sein",
+      "containersRequired": "Wählen Sie mindestens einen Container aus",
+      "idleTimeoutInvalid": "Geben Sie die Zeit im Format an: 1m, 30s, 1h2m (Minuten, Sekunden, Stunden)",
+      "startupTimeoutInvalid": "Geben Sie die Zeit im Format an: 30s, 2m (Sekunden, Minuten)",
+      "startTimeInvalid": "Die Startzeit muss im Format HH:MM angegeben werden",
+      "stopTimeInvalid": "Die Endzeit muss im Format HH:MM angegeben werden",
+      "healthPathInvalid": "Der Health-Check-Pfad muss mit \"/\" beginnen",
+      "apiError": "Service konnte nicht erstellt werden (API-Fehler)",
+      "networkError": "Netzwerkfehler beim Erstellen des Services"
+    }
+  },
+  "serviceCard": {
+    "containers": "Container",
+    "days": "Tage",
+    "daily": "täglich",
+    "timeWindow": "Zeitfenster",
+    "roundTheClock": "24/7",
+    "until": "bis",
+    "lastActivity": "Letzte Aktivität",
+    "settings": "Einstellungen",
+    "hide": "Ausblenden",
+    "sleep": "Schlafen",
+    "wake": "Aufwecken",
+    "modeOnDemand": "Bei Bedarf",
+    "modeScheduleOnly": "Nur Zeitplan",
+    "modeBoth": "Bei Bedarf + Zeitplan",
+    "sections": {
+      "modeAndAccess": "Modus und Zugriff",
+      "timeouts": "Timeouts",
+      "schedule": "Zeitplan (optional)",
+      "healthCheck": "Health-Check"
+    },
+    "addContainer": "Container hinzufügen…",
+    "noContainersAvailable": "Keine Container verfügbar",
+    "containerHelp": "Wählen Sie einen oder mehrere Container aus der Liste aus. Bereits ausgewählte Container werden oben angezeigt.",
+    "targetUrlHelp": "Interne Service-Adresse für Proxy. Zum Beispiel:",
+    "idleTimeout": "Leerlauf-Timeout",
+    "idleTimeoutLabel": "Leerlauf-Timeout:",
+    "idleTimeoutHelp": "Leerlaufzeit, nach der der Service gestoppt wird. Format: Zahl + Zeiteinheit (s, m, h). Beispiele:",
+    "startupTimeoutLabel": "Start-Timeout:",
+    "startupTimeoutHelp": "Maximale Wartezeit für erfolgreichen Service-Start. Format: Zahl + Zeiteinheit (s, m, h). Zum Beispiel:",
+    "weekdaysHelp": "Wählen Sie einen oder mehrere Wochentage aus. Alle Tage sind standardmäßig aktiv.",
+    "timeWindowHelp": "Die Zeit wird im 24-Stunden-Format angegeben. Felder können leer gelassen werden.",
+    "healthPathLabel": "Health-Check-Pfad:",
+    "healthPathHelp": "Relativer Pfad für Service-Health-Check. Zum Beispiel:",
+    "healthPathHelp2": "oder",
+    "healthPathHelp3": "Leer lassen, um Health-Check zu deaktivieren.",
+    "deleteService": "Service löschen",
+    "enabledBadge": "Aktiviert",
+    "disabledBadge": "Deaktiviert",
+    "toggleHelp": "Das Deaktivieren des Services stoppt Proxy, Zeitplanung und Hintergrundaufgaben.",
+    "running": "Service läuft",
+    "stopped": "Service gestoppt",
+    "proxyUnhealthy": "Problem auf Proxy-Ebene",
+    "proxyUnhealthyWarning": "Reverse-Proxy ({{host}}) antwortet nicht. Überprüfen Sie das nginx/apache-Routing zwischen dem Proxy und Ihrer Anwendung.",
+    "targetUnhealthy": "Problem auf Container-Ebene",
+    "targetUnhealthyWarning": "Die Anwendung erhält keine Antwort vom Container unter {{target}}. Überprüfen Sie die Ziel-URL und den Container-Status."
+  },
+  "serviceList": {
+    "empty": "Keine Services in diesem Tab"
+  },
+  "mainHeader": {
+    "title": "Services",
+    "add": "Hinzufügen",
+    "system": "System",
+    "updating": "aktualisiere…"
+  },
+  "sidebar": {
+    "all": "Alle",
+    "running": "Laufend",
+    "scheduled": "Geplant",
+    "help": "Hilfe",
+    "support": "Projekt unterstützen",
+    "darkTheme": "🌙 Dunkel",
+    "lightTheme": "☀️ Hell"
+  },
+  "systemSettings": {
+    "title": "Systemeinstellungen",
+    "listenAddr": "Listen-Adresse:",
+    "listenAddrHelp": "Adresse und Port, an dem Conslee eingehende Verbindungen akzeptiert. Zum Beispiel:",
+    "portChecking": "Port-Verfügbarkeit wird überprüft...",
+    "portAvailable": "Port ist verfügbar",
+    "portUnavailable": "Port ist nicht verfügbar",
+    "portError": "Fehler beim Überprüfen des Ports",
+    "portSaved": "Port gespeichert. Server startet neu, leitet zum neuen Port um...",
+    "idleReaperInterval": "Leerlauf-Reaper-Intervall:",
+    "idleReaperIntervalHelp": "Intervall, in dem inaktive Services überprüft und gestoppt werden. Format: Zahl + Zeiteinheit (s, m, h). Zum Beispiel:",
+    "close": "Schließen",
+    "save": "Speichern"
+  },
+  "app": {
+    "deleteConfirm": "Service \"{{name}}\" löschen?"
+  },
+  "help": {
+    "title": "Hilfe & Dokumentation",
+    "proxy": {
+      "title": "Proxy-Konfiguration",
+      "intro": "Damit Conslee den Datenverkehr verfolgen und im Modus 'Bei Bedarf' arbeiten kann, müssen Sie Ihren externen Proxy (nginx, Apache usw.) so konfigurieren, dass er Anfragen an Conslee weiterleitet, anstatt direkt an Container. Dies ermöglicht es Conslee zu erkennen, wann auf Services zugegriffen wird, und Container automatisch zu starten.",
+      "important": "Wichtig:",
+      "importantPoint1": "Ändern Sie den Proxy so, dass er auf die Listen-Adresse von Conslee zeigt (überprüfen Sie die Systemeinstellungen, Standard ist :8800)",
+      "importantPoint2": "In der Service-Konfiguration setzen Sie targetUrl auf das, was zuvor im Proxy war (der Port des Containers)",
+      "importantPoint3": "Wenn Ihr Proxy HTTPS verwendet, verwenden Sie HTTP im Proxy (proxy_pass http://127.0.0.1:8800), aber setzen Sie HTTPS in der targetUrl des Services (https://127.0.0.1:9000)",
+      "nginx": {
+        "title": "Nginx-Konfiguration",
+        "description": "Wenn Sie zuvor proxy_pass hatten, das direkt auf einen Container zeigte (z.B. http://127.0.0.1:9000), ändern Sie es so, dass es auf Conslee zeigt. Beispielkonfiguration:",
+        "exampleBefore": "# Vorher (direkt zum Container):\nlocation / {\n    proxy_pass http://127.0.0.1:9000;\n    ...\n}",
+        "exampleAfter": "# Nachher (über Conslee):\nlocation / {\n    proxy_pass http://127.0.0.1:8800;  # Listen-Adresse von Conslee\n    proxy_set_header Host $host;\n    proxy_set_header X-Real-IP $remote_addr;\n    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n    proxy_set_header X-Forwarded-Proto $scheme;\n    proxy_set_header X-Forwarded-Host $host;\n}",
+        "upstream": "Zur Bequemlichkeit können Sie upstream verwenden:",
+        "upstreamExample": "upstream conslee {\n    server 127.0.0.1:8800;\n}\n\nserver {\n    server_name your-domain.com;\n    location / {\n        proxy_pass http://conslee;\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header X-Forwarded-Proto $scheme;\n        proxy_set_header X-Forwarded-Host $host;\n    }\n}"
+      },
+      "apache": {
+        "title": "Apache-Konfiguration",
+        "description": "Wenn Sie zuvor ProxyPass hatten, das direkt auf einen Container zeigte, ändern Sie es so, dass es auf Conslee zeigt. Beispiel:",
+        "exampleBefore": "# Vorher (direkt zum Container):\nProxyPass / http://127.0.0.1:9000/\nProxyPassReverse / http://127.0.0.1:9000/",
+        "exampleAfter": "# Nachher (über Conslee):\nProxyPreserveHost On\nProxyPass / http://127.0.0.1:8800/  # Listen-Adresse von Conslee\nProxyPassReverse / http://127.0.0.1:8800/\n\n<Proxy *>\n    Require all granted\n</Proxy>"
+      },
+      "targetUrl": {
+        "title": "Service targetUrl-Konfiguration",
+        "description": "In den Service-Einstellungen setzen Sie targetUrl auf die Adresse, die zuvor in Ihrem Proxy war:",
+        "example1": "Wenn der Proxy war: proxy_pass http://127.0.0.1:9000\nDann targetUrl: http://127.0.0.1:9000",
+        "example2": "Wenn der Proxy HTTPS war, aber Sie ihn für Conslee auf HTTP geändert haben:\nProxy: proxy_pass http://127.0.0.1:8800\nTargetUrl: https://127.0.0.1:9000  # Verwenden Sie hier HTTPS"
+      }
+    },
+    "usage": {
+      "title": "Conslee verwenden",
+      "creating": {
+        "title": "Service erstellen",
+        "description": "Um einen neuen Service zu erstellen:",
+        "step1": "Klicken Sie auf die Schaltfläche 'Hinzufügen' in der Kopfzeile",
+        "step2": "Geben Sie einen Servicenamen ein. Für die Modi 'Bei Bedarf' oder 'Beide' geben Sie auch die Domain (Host) an, die für den Zugriff auf den Service verwendet wird",
+        "step3": "Wählen Sie einen oder mehrere Docker-Container aus, die gestartet werden sollen",
+        "step4": "Für die Modi 'Bei Bedarf' oder 'Beide' konfigurieren Sie die Ziel-URL (interne Adresse, an der der Service läuft, z.B. http://127.0.0.1:8800). Für den Modus 'Nur Zeitplan' sind Host und Ziel-URL optional - wenn weggelassen, verwaltet Conslee Container nur nach Zeitplan ohne Proxy",
+        "step5": "Legen Sie den Modus, Timeouts und optionalen Zeitplan nach Ihren Bedürfnissen fest"
+      },
+      "modes": {
+        "title": "Service-Modi",
+        "onDemand": "Bei Bedarf",
+        "onDemandDesc": "Der Service startet automatisch beim Zugriff und stoppt nach dem Leerlauf-Timeout. Erfordert, dass Host und Ziel-URL konfiguriert sind.",
+        "scheduleOnly": "Nur Zeitplan",
+        "scheduleOnlyDesc": "Der Service läuft nur nach Zeitplan. Host und Ziel-URL sind optional - wenn nicht angegeben, führt Conslee keine Proxy-Anfragen durch und verwaltet Container nur nach Zeitplan. Anfragen an die Site starten keine Container.",
+        "both": "Bei Bedarf + Zeitplan",
+        "bothDesc": "Der Service kann bei Bedarf gestartet werden und folgt auch dem Zeitplan. Erfordert, dass Host und Ziel-URL konfiguriert sind."
+      },
+      "timeouts": {
+        "title": "Timeouts",
+        "idle": "Leerlauf-Timeout",
+        "idleDesc": "Zeit, nach der ein inaktiver Service gestoppt wird. Format: Zahl + Einheit (s, m, h). Beispiel: 15m, 1h30m",
+        "startup": "Start-Timeout",
+        "startupDesc": "Maximale Wartezeit, bis Container starten und bereit sind. Format: Zahl + Einheit (s, m, h). Beispiel: 30s, 2m"
+      },
+      "scheduling": {
+        "title": "Zeitplanung",
+        "description": "Sie können Services so konfigurieren, dass sie an bestimmten Tagen und Zeitfenstern laufen. Wählen Sie Wochentage und legen Sie optional Start-/Endzeiten fest. Leere Zeitfelder bedeuten keine Zeitbeschränkungen für die ausgewählten Tage."
+      },
+      "healthCheck": {
+        "title": "Health-Check",
+        "description": "Geben Sie optional einen Health-Check-Pfad an (z.B. /health, /api/status). Conslee überprüft diesen Endpunkt, um zu bestätigen, dass der Service bereit ist, bevor der Datenverkehr weitergeleitet wird. Leer lassen, um Health-Checks zu deaktivieren."
+      }
+    },
+    "troubleshooting": {
+      "title": "Fehlerbehebung",
+      "proxyIssue": {
+        "title": "Probleme auf Proxy-Ebene",
+        "description": "Wenn Sie Warnungen 'Problem auf Proxy-Ebene' sehen:",
+        "check1": "Überprüfen Sie, ob Ihr externer Proxy (nginx/Apache) Anfragen korrekt an Conslee weiterleitet",
+        "check2": "Überprüfen Sie, ob Conslee läuft und an der konfigurierten Adresse lauscht (überprüfen Sie die Systemeinstellungen)",
+        "check3": "Stellen Sie sicher, dass der Host-Header korrekt von Ihrem externen Proxy weitergeleitet wird"
+      },
+      "containerIssue": {
+        "title": "Probleme auf Container-Ebene",
+        "description": "Wenn Sie Warnungen 'Problem auf Container-Ebene' sehen:",
+        "check1": "Überprüfen Sie, ob die Ziel-URL korrekt ist und der Service an dieser Adresse erreichbar ist",
+        "check2": "Überprüfen Sie, ob die Docker-Container laufen und gesund sind",
+        "check3": "Stellen Sie sicher, dass die Container an den richtigen Ports lauschen, die in der Ziel-URL angegeben sind"
+      }
+    }
+  },
+  "support": {
+    "title": "Projekt unterstützen",
+    "intro": "Die Entwicklung von Conslee hängt von Ihrer Unterstützung ab. Ihre Beiträge helfen uns, das Projekt zu verbessern, neue Funktionen hinzuzufügen und die Infrastruktur zu pflegen.",
+    "donationAlerts": {
+      "title": "DonationAlerts",
+      "description": "Über DonationAlerts unterstützen",
+      "url": "https://www.donationalerts.com/r/tulupovden"
+    },
+    "close": "Schließen"
+  }
+}
+

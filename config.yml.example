@@ -1,0 +1,6 @@
+server:
+  listen_addr: :8800
+idle_reaper:
+  interval: 1m0s
+services: []
+

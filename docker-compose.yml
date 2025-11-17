@@ -1,0 +1,15 @@
+services:
+  conslee:
+    build: .
+#    image: ghcr.io/tulupovden/conslee:latest
+    container_name: conslee
+    restart: unless-stopped
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - TZ=Europe/Moscow
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # config directory will be created automatically if missing on first run
+      - ./config:/app/config
+      - /etc/localtime:/etc/localtime:ro
+    network_mode: host

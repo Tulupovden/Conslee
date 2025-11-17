@@ -1,0 +1,234 @@
+{
+  "weekDays": {
+    "mon": "月",
+    "tue": "火",
+    "wed": "水",
+    "thu": "木",
+    "fri": "金",
+    "sat": "土",
+    "sun": "日"
+  },
+  "createService": {
+    "title": "新しいサービス",
+    "name": "名前：",
+    "host": "ホスト（ドメイン）：",
+    "stack": "スタック（オプション）：",
+    "selectStack": "スタックを選択…",
+    "containers": "コンテナ：",
+    "containerHelp": "リストから1つ以上のコンテナを選択してください。",
+    "targetUrl": "ターゲットURL：",
+    "idleTimeout": "アイドルタイムアウト：",
+    "startupTimeout": "起動タイムアウト：",
+    "mode": "モード：",
+    "modeOnDemand": "オンデマンド",
+    "modeScheduleOnly": "スケジュールのみ",
+    "modeBoth": "オンデマンド + スケジュール",
+    "weekdays": "曜日：",
+    "weekdaysHelp": "デフォルトではすべての日がアクティブです。個別の日を無効にできますが、少なくとも1日は選択されたままにする必要があります。",
+    "timeWindow": "時間枠：",
+    "timeWindowHelp": "開始時刻のみ、終了時刻のみ、または両方の値を指定できます。空のフィールドは、選択された日に時間制限がないことを意味します。",
+    "advancedSettings": "詳細設定 ▼",
+    "hideAdvancedSettings": "詳細設定を非表示 ▲",
+    "healthCheckPath": "ヘルスチェックパス：",
+    "cancel": "キャンセル",
+    "create": "作成",
+    "proxyNotification": {
+      "title": "プロキシ設定が必要",
+      "message": "ホストとターゲットURLの両方を指定したため、外部プロキシ（nginx、Apacheなど）を設定して、リクエストをConsleeに転送する必要があります。詳細な手順については、ヘルプセクションを参照してください。",
+      "viewHelp": "ヘルプセクションを表示",
+      "close": "閉じる"
+    },
+    "errors": {
+      "nameRequired": "サービス名を指定してください",
+      "hostRequired": "ドメイン（ホスト）を指定してください",
+      "hostInvalid": "ドメインはプロトコルなしで指定する必要があります。例：app.example.com",
+      "targetRequired": "ターゲットURLを指定してください",
+      "targetInvalid": "ターゲットURLは有効なhttpまたはhttpsアドレスである必要があります",
+      "containersRequired": "少なくとも1つのコンテナを選択してください",
+      "idleTimeoutInvalid": "時間を次の形式で指定してください：1m, 30s, 1h2m（分、秒、時間）",
+      "startupTimeoutInvalid": "時間を次の形式で指定してください：30s, 2m（秒、分）",
+      "startTimeInvalid": "開始時刻はHH:MM形式である必要があります",
+      "stopTimeInvalid": "終了時刻はHH:MM形式である必要があります",
+      "healthPathInvalid": "ヘルスチェックパスは\"/\"で始まる必要があります",
+      "apiError": "サービスの作成に失敗しました（APIエラー）",
+      "networkError": "サービスの作成中にネットワークエラーが発生しました"
+    }
+  },
+  "serviceCard": {
+    "containers": "コンテナ",
+    "days": "日",
+    "daily": "毎日",
+    "timeWindow": "時間枠",
+    "roundTheClock": "24/7",
+    "until": "まで",
+    "lastActivity": "最終アクティビティ",
+    "settings": "設定",
+    "hide": "非表示",
+    "sleep": "スリープ",
+    "wake": "ウェイク",
+    "modeOnDemand": "オンデマンド",
+    "modeScheduleOnly": "スケジュールのみ",
+    "modeBoth": "オンデマンド + スケジュール",
+    "sections": {
+      "modeAndAccess": "モードとアクセス",
+      "timeouts": "タイムアウト",
+      "schedule": "スケジュール（オプション）",
+      "healthCheck": "ヘルスチェック"
+    },
+    "addContainer": "コンテナを追加…",
+    "noContainersAvailable": "利用可能なコンテナがありません",
+    "containerHelp": "リストから1つ以上のコンテナを選択してください。既に選択されたコンテナは上に表示されます。",
+    "targetUrlHelp": "プロキシ用の内部サービスアドレス。例：",
+    "idleTimeout": "アイドルタイムアウト",
+    "idleTimeoutLabel": "アイドルタイムアウト：",
+    "idleTimeoutHelp": "サービスが停止されるまでのアイドル時間。形式：数値 + 時間単位（s, m, h）。例：",
+    "startupTimeoutLabel": "起動タイムアウト：",
+    "startupTimeoutHelp": "サービスの正常な起動を待つ最大時間。形式：数値 + 時間単位（s, m, h）。例：",
+    "weekdaysHelp": "1つ以上の曜日を選択してください。デフォルトではすべての日がアクティブです。",
+    "timeWindowHelp": "時間は24時間形式で指定されます。フィールドは空のままにすることができます。",
+    "healthPathLabel": "ヘルスチェックパス：",
+    "healthPathHelp": "サービスのヘルスチェック用の相対パス。例：",
+    "healthPathHelp2": "または",
+    "healthPathHelp3": "ヘルスチェックを無効にするには空のままにしてください。",
+    "deleteService": "サービスを削除",
+    "enabledBadge": "有効",
+    "disabledBadge": "無効",
+    "toggleHelp": "サービスを無効にすると、プロキシ、スケジュール、バックグラウンドタスクが停止します。",
+    "running": "サービスが実行中です",
+    "stopped": "サービスが停止しています",
+    "proxyUnhealthy": "プロキシ層の問題",
+    "proxyUnhealthyWarning": "リバースプロキシ（{{host}}）が応答していません。プロキシとアプリケーション間のnginx/apacheルーティングを確認してください。",
+    "targetUnhealthy": "コンテナ層の問題",
+    "targetUnhealthyWarning": "アプリケーションが{{target}}のコンテナから応答を受け取れません。ターゲットURLとコンテナの状態を確認してください。"
+  },
+  "serviceList": {
+    "empty": "このタブにサービスがありません"
+  },
+  "mainHeader": {
+    "title": "サービス",
+    "add": "追加",
+    "system": "システム",
+    "updating": "更新中…"
+  },
+  "sidebar": {
+    "all": "すべて",
+    "running": "実行中",
+    "scheduled": "スケジュール済み",
+    "help": "ヘルプ",
+    "support": "プロジェクトをサポート",
+    "darkTheme": "🌙 ダーク",
+    "lightTheme": "☀️ ライト"
+  },
+  "systemSettings": {
+    "title": "システム設定",
+    "listenAddr": "リスンアドレス：",
+    "listenAddrHelp": "Consleeが着信接続を受け入れるアドレスとポート。例：",
+    "portChecking": "ポートの可用性を確認中...",
+    "portAvailable": "ポートは利用可能です",
+    "portUnavailable": "ポートは利用できません",
+    "portError": "ポートの確認中にエラーが発生しました",
+    "portSaved": "ポートが保存されました。サーバーを再起動し、新しいポートにリダイレクトしています...",
+    "idleReaperInterval": "アイドルリーパー間隔：",
+    "idleReaperIntervalHelp": "アイドルサービスがチェックされ、停止される間隔。形式：数値 + 時間単位（s, m, h）。例：",
+    "close": "閉じる",
+    "save": "保存"
+  },
+  "app": {
+    "deleteConfirm": "サービス\"{{name}}\"を削除しますか？"
+  },
+  "help": {
+    "title": "ヘルプとドキュメント",
+    "proxy": {
+      "title": "プロキシ設定",
+      "intro": "Consleeがトラフィックを追跡し、'オンデマンド'モードで動作するには、外部プロキシ（nginx、Apacheなど）を設定して、コンテナに直接転送するのではなく、Consleeにリクエストを転送する必要があります。これにより、Consleeはサービスにアクセスされたときに検出し、コンテナを自動的に起動できます。",
+      "important": "重要：",
+      "importantPoint1": "プロキシをConsleeのリスンアドレスを指すように変更します（システム設定を確認してください。デフォルトは:8800です）",
+      "importantPoint2": "サービス設定で、targetUrlを以前にプロキシにあったもの（コンテナのポート）に設定します",
+      "importantPoint3": "プロキシがHTTPSを使用している場合、プロキシでHTTPを使用します（proxy_pass http://127.0.0.1:8800）が、サービスのtargetUrlでHTTPSを設定します（https://127.0.0.1:9000）",
+      "nginx": {
+        "title": "Nginx設定",
+        "description": "以前にコンテナを直接指すproxy_pass（例：http://127.0.0.1:9000）があった場合、Consleeを指すように変更します。設定例：",
+        "exampleBefore": "# 以前（コンテナに直接）：\nlocation / {\n    proxy_pass http://127.0.0.1:9000;\n    ...\n}",
+        "exampleAfter": "# 後（Conslee経由）：\nlocation / {\n    proxy_pass http://127.0.0.1:8800;  # Consleeのリスンアドレス\n    proxy_set_header Host $host;\n    proxy_set_header X-Real-IP $remote_addr;\n    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n    proxy_set_header X-Forwarded-Proto $scheme;\n    proxy_set_header X-Forwarded-Host $host;\n}",
+        "upstream": "便利のために、upstreamを使用できます：",
+        "upstreamExample": "upstream conslee {\n    server 127.0.0.1:8800;\n}\n\nserver {\n    server_name your-domain.com;\n    location / {\n        proxy_pass http://conslee;\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header X-Forwarded-Proto $scheme;\n        proxy_set_header X-Forwarded-Host $host;\n    }\n}"
+      },
+      "apache": {
+        "title": "Apache設定",
+        "description": "以前にコンテナを直接指すProxyPassがあった場合、Consleeを指すように変更します。例：",
+        "exampleBefore": "# 以前（コンテナに直接）：\nProxyPass / http://127.0.0.1:9000/\nProxyPassReverse / http://127.0.0.1:9000/",
+        "exampleAfter": "# 後（Conslee経由）：\nProxyPreserveHost On\nProxyPass / http://127.0.0.1:8800/  # Consleeのリスンアドレス\nProxyPassReverse / http://127.0.0.1:8800/\n\n<Proxy *>\n    Require all granted\n</Proxy>"
+      },
+      "targetUrl": {
+        "title": "サービスのtargetUrl設定",
+        "description": "サービス設定で、targetUrlを以前にプロキシにあったアドレスに設定します：",
+        "example1": "プロキシが：proxy_pass http://127.0.0.1:9000\nの場合、targetUrl：http://127.0.0.1:9000",
+        "example2": "プロキシがHTTPSだったが、Conslee用にHTTPに変更した場合：\nプロキシ：proxy_pass http://127.0.0.1:8800\nTargetUrl：https://127.0.0.1:9000  # ここでHTTPSを使用"
+      }
+    },
+    "usage": {
+      "title": "Consleeの使用",
+      "creating": {
+        "title": "サービスの作成",
+        "description": "新しいサービスを作成するには：",
+        "step1": "ヘッダーの「追加」ボタンをクリックします",
+        "step2": "サービス名を入力します。「オンデマンド」または「両方」モードの場合、サービスへのアクセスに使用されるドメイン（ホスト）も指定します",
+        "step3": "起動する必要がある1つ以上のDockerコンテナを選択します",
+        "step4": "「オンデマンド」または「両方」モードの場合、ターゲットURL（サービスが実行される内部アドレス、例：http://127.0.0.1:8800）を設定します。「スケジュールのみ」モードの場合、ホストとターゲットURLはオプションです - 省略した場合、Consleeはプロキシなしでスケジュールによってのみコンテナを管理します",
+        "step5": "ニーズに応じてモード、タイムアウト、オプションのスケジュールを設定します"
+      },
+      "modes": {
+        "title": "サービスモード",
+        "onDemand": "オンデマンド",
+        "onDemandDesc": "サービスはアクセス時に自動的に起動し、アイドルタイムアウト後に停止します。ホストとターゲットURLを設定する必要があります。",
+        "scheduleOnly": "スケジュールのみ",
+        "scheduleOnlyDesc": "サービスはスケジュールに従ってのみ実行されます。ホストとターゲットURLはオプションです - 指定しない場合、Consleeはリクエストをプロキシせず、スケジュールによってのみコンテナを管理します。サイトへのリクエストはコンテナを起動しません。",
+        "both": "オンデマンド + スケジュール",
+        "bothDesc": "サービスはオンデマンドで起動でき、スケジュールにも従います。ホストとターゲットURLを設定する必要があります。"
+      },
+      "timeouts": {
+        "title": "タイムアウト",
+        "idle": "アイドルタイムアウト",
+        "idleDesc": "非アクティブなサービスが停止されるまでの時間。形式：数値 + 単位（s, m, h）。例：15m, 1h30m",
+        "startup": "起動タイムアウト",
+        "startupDesc": "コンテナが起動して準備が整うまで待つ最大時間。形式：数値 + 単位（s, m, h）。例：30s, 2m"
+      },
+      "scheduling": {
+        "title": "スケジュール",
+        "description": "特定の日と時間枠で実行されるようにサービスを設定できます。曜日を選択し、オプションで開始/終了時刻を設定します。空の時間フィールドは、選択された日に時間制限がないことを意味します。"
+      },
+      "healthCheck": {
+        "title": "ヘルスチェック",
+        "description": "オプションでヘルスチェックパス（例：/health, /api/status）を指定します。Consleeは、トラフィックをルーティングする前に、このエンドポイントをチェックしてサービスが準備できていることを確認します。ヘルスチェックを無効にするには空のままにしてください。"
+      }
+    },
+    "troubleshooting": {
+      "title": "トラブルシューティング",
+      "proxyIssue": {
+        "title": "プロキシ層の問題",
+        "description": "「プロキシ層の問題」警告が表示される場合：",
+        "check1": "外部プロキシ（nginx/Apache）がConsleeにリクエストを正しく転送していることを確認してください",
+        "check2": "Consleeが実行中で、設定されたアドレスでリッスンしていることを確認してください（システム設定を確認）",
+        "check3": "ホストヘッダーが外部プロキシから正しく転送されていることを確認してください"
+      },
+      "containerIssue": {
+        "title": "コンテナ層の問題",
+        "description": "「コンテナ層の問題」警告が表示される場合：",
+        "check1": "ターゲットURLが正しく、サービスがそのアドレスでアクセス可能であることを確認してください",
+        "check2": "Dockerコンテナが実行中で正常であることを確認してください",
+        "check3": "コンテナがターゲットURLで指定された正しいポートでリッスンしていることを確認してください"
+      }
+    }
+  },
+  "support": {
+    "title": "プロジェクトをサポート",
+    "intro": "Consleeの開発はあなたのサポートに依存しています。あなたの貢献は、プロジェクトの改善、新機能の追加、インフラストラクチャの維持に役立ちます。",
+    "donationAlerts": {
+      "title": "DonationAlerts",
+      "description": "DonationAlertsを通じてサポート",
+      "url": "https://www.donationalerts.com/r/tulupovden"
+    },
+    "close": "閉じる"
+  }
+}
+

@@ -1,0 +1,73 @@
+# Binaries
+conslee
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Dependency directories
+ui/node_modules/
+ui/dist/
+ui/.vite/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+
+# Configuration files (user-specific)
+config.yml
+config/config.yml
+*.env
+.env.local
+.env.*.local
+
+# Docker
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Build artifacts
+dist/
+build/
+bin/
+
+# Coverage reports
+coverage/
+*.coverprofile
+coverage.html
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup files
+*.backup
+backup/
+
+# Local development files
+.local/
+local/

@@ -1,0 +1,234 @@
+{
+  "weekDays": {
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat",
+    "sun": "Sun"
+  },
+  "createService": {
+    "title": "New Service",
+    "name": "Name:",
+    "host": "Host (domain):",
+    "stack": "Stack (optional):",
+    "selectStack": "Select stack…",
+    "containers": "Containers:",
+    "containerHelp": "Select one or more containers from the list.",
+    "targetUrl": "Target URL:",
+    "idleTimeout": "Idle timeout:",
+    "startupTimeout": "Startup timeout:",
+    "mode": "Mode:",
+    "modeOnDemand": "On demand",
+    "modeScheduleOnly": "Schedule only",
+    "modeBoth": "On demand + schedule",
+    "weekdays": "Weekdays:",
+    "weekdaysHelp": "All days are active by default. You can disable individual days, but at least one day must remain selected.",
+    "timeWindow": "Time window:",
+    "timeWindowHelp": "You can specify only start time, only end time, or both values. Empty fields mean no time restrictions on selected days.",
+    "advancedSettings": "Advanced settings ▼",
+    "hideAdvancedSettings": "Hide advanced settings ▲",
+    "healthCheckPath": "Health check path:",
+    "cancel": "Cancel",
+    "create": "Create",
+    "proxyNotification": {
+      "title": "Proxy Configuration Required",
+      "message": "Since you've specified both Host and Target URL, you need to configure your external proxy (nginx, Apache, etc.) to forward requests to Conslee. See the Help section for detailed instructions.",
+      "viewHelp": "View Help Section",
+      "close": "Close"
+    },
+    "errors": {
+      "nameRequired": "Please specify the service name",
+      "hostRequired": "Please specify the domain (Host)",
+      "hostInvalid": "Domain must be specified without protocol, e.g.: app.example.com",
+      "targetRequired": "Please specify Target URL",
+      "targetInvalid": "Target URL must be a valid http or https address",
+      "containersRequired": "Select at least one container",
+      "idleTimeoutInvalid": "Specify time in format: 1m, 30s, 1h2m (minutes, seconds, hours)",
+      "startupTimeoutInvalid": "Specify time in format: 30s, 2m (seconds, minutes)",
+      "startTimeInvalid": "Start time must be in HH:MM format",
+      "stopTimeInvalid": "Stop time must be in HH:MM format",
+      "healthPathInvalid": "Health check path must start with \"/\"",
+      "apiError": "Failed to create service (API error)",
+      "networkError": "Network error while creating service"
+    }
+  },
+  "serviceCard": {
+    "containers": "Containers",
+    "days": "Days",
+    "daily": "daily",
+    "timeWindow": "Time window",
+    "roundTheClock": "24/7",
+    "until": "until",
+    "lastActivity": "Last activity",
+    "settings": "Settings",
+    "hide": "Hide",
+    "sleep": "Sleep",
+    "wake": "Wake",
+    "modeOnDemand": "On demand",
+    "modeScheduleOnly": "Schedule only",
+    "modeBoth": "On demand + schedule",
+    "sections": {
+      "modeAndAccess": "Mode and access",
+      "timeouts": "Timeouts",
+      "schedule": "Schedule (optional)",
+      "healthCheck": "Health check"
+    },
+    "addContainer": "Add container…",
+    "noContainersAvailable": "No containers available",
+    "containerHelp": "Select one or more containers from the list. Already selected containers are displayed above.",
+    "targetUrlHelp": "Internal service address for proxying. For example:",
+    "idleTimeout": "Idle timeout",
+    "idleTimeoutLabel": "Idle timeout:",
+    "idleTimeoutHelp": "Idle time after which the service will be stopped. Format: number + time unit (s, m, h). Examples:",
+    "startupTimeoutLabel": "Startup timeout:",
+    "startupTimeoutHelp": "Maximum time to wait for successful service startup. Format: number + time unit (s, m, h). For example:",
+    "weekdaysHelp": "Select one or more weekdays. All days are active by default.",
+    "timeWindowHelp": "Time is specified in 24-hour format. Fields can be left empty.",
+    "healthPathLabel": "Health check path:",
+    "healthPathHelp": "Relative path for service health check. For example:",
+    "healthPathHelp2": "or",
+    "healthPathHelp3": "Leave empty to disable health check.",
+    "deleteService": "Delete service",
+    "enabledBadge": "Enabled",
+    "disabledBadge": "Disabled",
+    "toggleHelp": "Disabling the service stops proxying, scheduling, and background tasks.",
+    "running": "Service is running",
+    "stopped": "Service is stopped",
+    "proxyUnhealthy": "Proxy layer issue",
+    "proxyUnhealthyWarning": "Reverse proxy ({{host}}) is not responding. Check nginx/apache routing between the proxy and your application.",
+    "targetUnhealthy": "Container layer issue",
+    "targetUnhealthyWarning": "The application gets no response from the container at {{target}}. Check the Target URL and container state."
+  },
+  "serviceList": {
+    "empty": "No services in this tab"
+  },
+  "mainHeader": {
+    "title": "Services",
+    "add": "Add",
+    "system": "System",
+    "updating": "updating…"
+  },
+  "sidebar": {
+    "all": "All",
+    "running": "Running",
+    "scheduled": "Scheduled",
+    "help": "Help",
+    "support": "Support Project",
+    "darkTheme": "🌙 Dark",
+    "lightTheme": "☀️ Light"
+  },
+  "systemSettings": {
+    "title": "System Settings",
+    "listenAddr": "Listen address:",
+    "listenAddrHelp": "Address and port where Conslee will accept incoming connections. For example:",
+    "portChecking": "Checking port availability...",
+    "portAvailable": "Port is available",
+    "portUnavailable": "Port is not available",
+    "portError": "Error checking port",
+    "portSaved": "Port saved. Server is restarting, redirecting to new port...",
+    "idleReaperInterval": "Idle reaper interval:",
+    "idleReaperIntervalHelp": "Interval at which idle services are checked and stopped. Format: number + time unit (s, m, h). For example:",
+    "close": "Close",
+    "save": "Save"
+  },
+  "app": {
+    "deleteConfirm": "Delete service \"{{name}}\"?"
+  },
+  "help": {
+    "title": "Help & Documentation",
+    "proxy": {
+      "title": "Proxy Configuration",
+      "intro": "For Conslee to track traffic and work in 'on demand' mode, you need to configure your external proxy (nginx, Apache, etc.) to forward requests to Conslee instead of directly to containers. This allows Conslee to detect when services are accessed and automatically start containers.",
+      "important": "Important:",
+      "importantPoint1": "Change the proxy to point to Conslee's listen address (check System Settings, default is :8800)",
+      "importantPoint2": "In the service configuration, set targetUrl to what was previously in the proxy (the container's port)",
+      "importantPoint3": "If your proxy uses HTTPS, use HTTP in the proxy (proxy_pass http://127.0.0.1:8800), but set HTTPS in the service's targetUrl (https://127.0.0.1:9000)",
+      "nginx": {
+        "title": "Nginx Configuration",
+        "description": "If you previously had proxy_pass pointing directly to a container (e.g., http://127.0.0.1:9000), change it to point to Conslee. Example configuration:",
+        "exampleBefore": "# Before (direct to container):\nlocation / {\n    proxy_pass http://127.0.0.1:9000;\n    ...\n}",
+        "exampleAfter": "# After (via Conslee):\nlocation / {\n    proxy_pass http://127.0.0.1:8800;  # Conslee's listen address\n    proxy_set_header Host $host;\n    proxy_set_header X-Real-IP $remote_addr;\n    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n    proxy_set_header X-Forwarded-Proto $scheme;\n    proxy_set_header X-Forwarded-Host $host;\n}",
+        "upstream": "For convenience, you can use upstream:",
+        "upstreamExample": "upstream conslee {\n    server 127.0.0.1:8800;\n}\n\nserver {\n    server_name your-domain.com;\n    location / {\n        proxy_pass http://conslee;\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n        proxy_set_header X-Forwarded-Proto $scheme;\n        proxy_set_header X-Forwarded-Host $host;\n    }\n}"
+      },
+      "apache": {
+        "title": "Apache Configuration",
+        "description": "If you previously had ProxyPass pointing directly to a container, change it to point to Conslee. Example:",
+        "exampleBefore": "# Before (direct to container):\nProxyPass / http://127.0.0.1:9000/\nProxyPassReverse / http://127.0.0.1:9000/",
+        "exampleAfter": "# After (via Conslee):\nProxyPreserveHost On\nProxyPass / http://127.0.0.1:8800/  # Conslee's listen address\nProxyPassReverse / http://127.0.0.1:8800/\n\n<Proxy *>\n    Require all granted\n</Proxy>"
+      },
+      "targetUrl": {
+        "title": "Service targetUrl Configuration",
+        "description": "In the service settings, set targetUrl to the address that was previously in your proxy:",
+        "example1": "If proxy was: proxy_pass http://127.0.0.1:9000\nThen targetUrl: http://127.0.0.1:9000",
+        "example2": "If proxy was HTTPS but you changed it to HTTP for Conslee:\nProxy: proxy_pass http://127.0.0.1:8800\nTargetUrl: https://127.0.0.1:9000  # Use HTTPS here"
+      }
+    },
+    "usage": {
+      "title": "Using Conslee",
+      "creating": {
+        "title": "Creating a Service",
+        "description": "To create a new service:",
+        "step1": "Click the 'Add' button in the header",
+        "step2": "Enter a service name. For 'On demand' or 'Both' modes, also specify the domain (Host) that will be used to access the service",
+        "step3": "Select one or more Docker containers that should be started",
+        "step4": "For 'On demand' or 'Both' modes, configure the Target URL (internal address where the service runs, e.g., http://127.0.0.1:8800). For 'Schedule only' mode, Host and Target URL are optional - if omitted, Conslee will only manage containers by schedule without proxying",
+        "step5": "Set the mode, timeouts, and optional schedule according to your needs"
+      },
+      "modes": {
+        "title": "Service Modes",
+        "onDemand": "On demand",
+        "onDemandDesc": "Service starts automatically when accessed and stops after the idle timeout. Requires Host and Target URL to be configured.",
+        "scheduleOnly": "Schedule only",
+        "scheduleOnlyDesc": "Service only runs according to the schedule. Host and Target URL are optional - if not specified, Conslee will not proxy requests and only manage containers by schedule. Requests to the site will not start containers.",
+        "both": "On demand + schedule",
+        "bothDesc": "Service can be started on demand and also follows the schedule. Requires Host and Target URL to be configured."
+      },
+      "timeouts": {
+        "title": "Timeouts",
+        "idle": "Idle timeout",
+        "idleDesc": "Time after which an inactive service will be stopped. Format: number + unit (s, m, h). Example: 15m, 1h30m",
+        "startup": "Startup timeout",
+        "startupDesc": "Maximum time to wait for containers to start and become ready. Format: number + unit (s, m, h). Example: 30s, 2m"
+      },
+      "scheduling": {
+        "title": "Scheduling",
+        "description": "You can configure services to run on specific days and time windows. Select weekdays and optionally set start/stop times. Empty time fields mean no time restrictions for selected days."
+      },
+      "healthCheck": {
+        "title": "Health Check",
+        "description": "Optionally specify a health check path (e.g., /health, /api/status). Conslee will check this endpoint to verify the service is ready before routing traffic. Leave empty to disable health checks."
+      }
+    },
+    "troubleshooting": {
+      "title": "Troubleshooting",
+      "proxyIssue": {
+        "title": "Proxy Layer Issues",
+        "description": "If you see 'Proxy layer issue' warnings:",
+        "check1": "Verify that your external proxy (nginx/Apache) is correctly forwarding requests to Conslee",
+        "check2": "Check that Conslee is running and listening on the configured address (check System Settings)",
+        "check3": "Ensure the Host header is being forwarded correctly from your external proxy"
+      },
+      "containerIssue": {
+        "title": "Container Layer Issues",
+        "description": "If you see 'Container layer issue' warnings:",
+        "check1": "Verify the Target URL is correct and the service is accessible at that address",
+        "check2": "Check that the Docker containers are running and healthy",
+        "check3": "Ensure the containers are listening on the correct ports specified in Target URL"
+      }
+    }
+  },
+  "support": {
+    "title": "Support the Project",
+    "intro": "The development of Conslee depends on your support. Your contributions help us improve the project, add new features, and maintain the infrastructure.",
+    "donationAlerts": {
+      "title": "DonationAlerts",
+      "description": "Support via DonationAlerts",
+      "url": "https://www.donationalerts.com/r/tulupovden"
+    },
+    "close": "Close"
+  }
+}
+
