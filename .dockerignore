@@ -1,0 +1,28 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Node
+node_modules
+ui/node_modules
+ui/dist
+ui/.vite
+
+# Go
+
+*.exe
+*.test
+*.out
+
+# IDE
+.vscode
+.idea
+
+# Misc
+*.log
+.DS_Store

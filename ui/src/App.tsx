@@ -21,12 +21,12 @@ import { useContainers } from "./hooks/useContainers";
 
 const App: React.FC = () => {
   const { t } = useI18n();
-  
+
   // Data hooks
   const { services, loading, refetch: fetchServices } = useServices();
   const { system, refetch: fetchSystem } = useSystem();
   const { containers } = useContainers();
-  
+
   // UI state
   const [tab, setTab] = useState<Tab>("all");
   const [theme, setTheme] = useState<"dark" | "light">(() => {
@@ -49,7 +49,7 @@ const App: React.FC = () => {
   const [selectedStack, setSelectedStack] = useState<string | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showSupport, setShowSupport] = useState(false);
-  
+
   const busyContainers = useMemo(
     () => Array.from(new Set(services.flatMap(s => s.containers))),
     [services]
@@ -70,7 +70,7 @@ const App: React.FC = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      
+
       // If listenAddr changed, wait for server restart and redirect to new port
       if (patch.listenAddr !== undefined && patch.listenAddr !== system.listenAddr) {
         const newAddr = patch.listenAddr;
@@ -82,11 +82,11 @@ const App: React.FC = () => {
           const parts = newAddr.split(":");
           port = parts[parts.length - 1];
         }
-        
+
         if (port) {
           // Wait for server restart (3 seconds)
           await new Promise(resolve => setTimeout(resolve, 3000));
-          
+
           // Get current host and protocol
           const currentHost = window.location.hostname;
           const currentProtocol = window.location.protocol;
@@ -98,7 +98,7 @@ const App: React.FC = () => {
           return;
         }
       }
-      
+
       await fetchSystem();
     } catch (e) {
       console.error("Failed to update system settings", e);
@@ -170,7 +170,15 @@ const App: React.FC = () => {
   const formatLastActivity = (iso: string) => {
     if (!iso) return "—";
     const d = new Date(iso);
-    return d.toLocaleString();
+    return d.toLocaleString(undefined, {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
   };
 
 
