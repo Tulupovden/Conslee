@@ -603,7 +603,7 @@ func doProbeRequest(ctx context.Context, client *http.Client, method string, req
 		result.FinalURL = resp.Request.URL.String()
 	}
 
-	if resp.StatusCode >= 200 && resp.StatusCode < 400 {
+	if resp.StatusCode >= 200 && resp.StatusCode < 500 {
 		if req.RequireSig {
 			if resp.Header.Get(probeSignatureHeader) == "" {
 				result.Error = "missing conslee signature"
