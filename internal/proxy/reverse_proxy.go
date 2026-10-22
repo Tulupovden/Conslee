@@ -52,6 +52,9 @@ func ensureRunning(ctx context.Context, rt ContainerRuntime, svc *ServiceState) 
 		return nil
 	}
 
+	svc.Starting = true  
+	defer func() { svc.Starting = false }()
+
 	hostPort := ""
 	if svc.Target != nil {
 		hostPort = svc.Target.Host

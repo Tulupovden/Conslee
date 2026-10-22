@@ -33,6 +33,9 @@ func (c *Conslee) reapIdle(ctx context.Context) {
 		if svc.Config.IdleTimeout <= 0 {
 			continue
 		}
+		if svc.Starting {  
+			continue  
+		}
 		idle := now.Sub(svc.LastActivity)
 		if idle < svc.Config.IdleTimeout {
 			continue
