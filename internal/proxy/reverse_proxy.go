@@ -16,6 +16,7 @@ import (
 // Container lifecycle
 
 func ensureRunning(ctx context.Context, rt ContainerRuntime, svc *ServiceState) error {
+	defer func() { svc.Starting = false }()
 	names := svc.Config.Containers
 	if len(names) == 0 && svc.Config.ContainerName != "" {
 		names = []string{svc.Config.ContainerName}
@@ -42,6 +43,7 @@ func ensureRunning(ctx context.Context, rt ContainerRuntime, svc *ServiceState) 
 			continue
 		}
 		log.Printf("starting container %s for service %s...", name, svc.Config.Name)
+		svc.Starting = true
 		if err := rt.Start(opCtx, name); err != nil {
 			return fmt.Errorf("start %s: %w", name, err)
 		}

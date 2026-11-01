@@ -43,6 +43,7 @@ type ServiceState struct {
 	Target       *url.URL
 	LastActivity time.Time
 	Schedule     *ServiceSchedule
+	Starting     bool
 }
 
 // DTOs
